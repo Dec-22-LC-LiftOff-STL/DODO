@@ -1,6 +1,8 @@
 package DodoData.controllers;
 
 import DodoData.models.DodoRepos.InterestsRepo;
+import DodoData.models.DodoRepos.InterestsTypeRepository;
+import DodoData.models.InterestsType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,18 @@ import static DodoData.models.InterestsType.userValue;
 
 @Controller
 @ComponentScan
-public class Interests {
+public class InterestControl {
 
     @Autowired
     private InterestsRepo interestsRepo;
+
+    private List<InterestsType> userChoices;
+
+    public String showUserChoices(Model model, int userId) {
+        userChoices = InterestsTypeRepository.findByUserValueTrue(true);
+        model.addAttribute("savedInterests", userChoices);
+        return "MyNest";
+    }
 
 //    @GetMapping()
     public String interestOptions(Model model){
@@ -25,6 +35,8 @@ public class Interests {
         model.addAttribute("interests", interestsRepo.findAll());
         return "redirect";
     }
+
+
 
 //    @GetMapping()
     public String interestChoices(){
