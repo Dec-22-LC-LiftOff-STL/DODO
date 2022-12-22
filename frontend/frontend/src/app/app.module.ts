@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
     LoginPageComponent,
     HomePageComponent,
     MainLayoutComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

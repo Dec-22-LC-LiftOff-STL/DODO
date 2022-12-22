@@ -10,15 +10,17 @@ import javax.persistence.Id;
 @EntityScan
 public class InterestsType {
 
+    private Integer userId;
     @Id
     @GeneratedValue
-    private int interestsId;
+    private Integer interestsId;
 
     private String interestsType;
 
     public static Boolean userValue;
 
-    public InterestsType(int id, String type, boolean value){
+    public InterestsType(int userId, int id, String type, boolean value){
+//        this.userId = userId;
         this.interestsId = id;
         this.interestsType = type;
         this.userValue = value;
