@@ -1,6 +1,5 @@
 package DodoData.controllers;
 
-import DodoData.models.DodoRepos.InterestsRepo;
 import DodoData.models.DodoRepos.InterestsTypeRepository;
 import DodoData.models.InterestsType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import static DodoData.models.InterestsType.userValue;
 public class InterestControl {
 
     @Autowired
-    private InterestsRepo interestsRepo;
+    private InterestsTypeRepository interestsRepo;
 
     private List<InterestsType> userChoices;
 

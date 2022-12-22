@@ -10,9 +10,7 @@ import javax.persistence.Id;
 @EntityScan
 public class InterestsType {
 
-//    @Id
-//    @GeneratedValue
-//    private Integer userId;
+    private Integer userId;
     @Id
     @GeneratedValue
     private Integer interestsId;
