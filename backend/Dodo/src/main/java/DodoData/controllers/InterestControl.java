@@ -14,7 +14,7 @@ import java.util.List;
 import static DodoData.models.InterestsType.userValue;
 
 @Controller
-@ComponentScan
+//@ComponentScan
 public class InterestControl {
 
     @Autowired
@@ -22,15 +22,15 @@ public class InterestControl {
 
     private List<InterestsType> userChoices;
 
+    //GetMapping()
     public String showUserChoices(Model model, int userId) {
         userChoices = InterestsTypeRepository.findByUserValueTrue(true);
         model.addAttribute("savedInterests", userChoices);
         return "MyNest";
     }
 
-//    @GetMapping()
+    //@GetMapping()
     public String interestOptions(Model model){
-
         model.addAttribute("interests", interestsRepo.findAll());
         return "redirect";
     }

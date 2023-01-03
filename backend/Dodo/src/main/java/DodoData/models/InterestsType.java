@@ -2,26 +2,17 @@ package DodoData.models;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @EntityScan
-public class InterestsType {
-
-    private Integer userId;
-    @Id
-    @GeneratedValue
-    private Integer interestsId;
+public class InterestsType extends IdAbstract{
 
     private String interestsType;
 
     public static Boolean userValue;
 
-    public InterestsType(int userId, int id, String type, boolean value){
-//        this.userId = userId;
-        this.interestsId = id;
+    public InterestsType(String type, boolean value){
         this.interestsType = type;
         this.userValue = value;
     }
@@ -30,6 +21,21 @@ public class InterestsType {
 
     }
 
+    //Getters and Setters
 
+    public String getInterestsType() {
+        return interestsType;
+    }
 
+    public void setInterestsType(String interestsType) {
+        this.interestsType = interestsType;
+    }
+
+    public static Boolean getUserValue() {
+        return userValue;
+    }
+
+    public static void setUserValue(Boolean userValue) {
+        InterestsType.userValue = userValue;
+    }
 }
