@@ -1,6 +1,7 @@
 package DodoData.models;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UserInfo extends IdAbstract{
@@ -8,6 +9,9 @@ public class UserInfo extends IdAbstract{
     private String name;
 
     private String password;
+
+    @OneToOne
+    private Profile userProfile;
 
     //Constructors
 

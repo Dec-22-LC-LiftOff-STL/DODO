@@ -10,7 +10,7 @@ public class Profile extends IdAbstract{
     private String email;
 
     @OneToOne
-    UserInfo thisUser;
+    private UserInfo thisUser;
 
     //Constructors
 

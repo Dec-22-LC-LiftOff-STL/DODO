@@ -1,6 +1,8 @@
 package DodoData.controllers;
 
 import DodoData.models.DodoRepos.InterestsTypeRepository;
+import DodoData.models.DodoRepos.ProfileRepository;
+import DodoData.models.DodoRepos.UserInfoRepository;
 import DodoData.models.InterestsType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,29 +20,33 @@ import static DodoData.models.InterestsType.userValue;
 public class InterestControl {
 
     @Autowired
-    private InterestsTypeRepository interestsRepo;
+    private ProfileRepository profileRepository;
+
+    @Autowired
+    private InterestsTypeRepository interestsTypeRepository;
+
+    @Autowired
+    private UserInfoRepository userInfoRepository;
 
     private List<InterestsType> userChoices;
 
     //GetMapping()
-    public String showUserChoices(Model model, int userId) {
+    public String showUserChoices(Model model) {
         userChoices = InterestsTypeRepository.findByUserValueTrue(true);
         model.addAttribute("savedInterests", userChoices);
         return "MyNest";
     }
 
-    //@GetMapping()
+//    @GetMapping()
     public String interestOptions(Model model){
-        model.addAttribute("interests", interestsRepo.findAll());
+        model.addAttribute("interests", interestsTypeRepository.findAll());
         return "redirect";
     }
-
-
 
 //    @GetMapping()
     public String interestChoices(){
         List<Iterable> choices = new ArrayList<>();
-        choices.add(interestsRepo.findAll());
+        choices.add(interestsTypeRepository.findAll());
 
         List<Iterable> profileInterests = new ArrayList<>();
 

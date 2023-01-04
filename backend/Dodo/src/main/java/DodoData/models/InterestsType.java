@@ -12,6 +12,18 @@ public class InterestsType extends IdAbstract{
 
     public static Boolean userValue;
 
+    @ManyToOne
+    @JoinColumn(name = "user_profile_id")
+    private Profile userProfile;
+
+    public Profile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(Profile userProfile) {
+        this.userProfile = userProfile;
+    }
+
     public InterestsType(String type, boolean value){
         this.interestsType = type;
         this.userValue = value;
