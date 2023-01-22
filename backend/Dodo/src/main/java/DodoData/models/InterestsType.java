@@ -1,9 +1,14 @@
 package DodoData.models;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.hibernate.type.AnyType;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class InterestsType extends IdAbstract{
@@ -11,6 +16,19 @@ public class InterestsType extends IdAbstract{
     Boolean interestsChecked;
 
     String interestName;
+//    private Map<String, String> savedInterests;
+//    @JsonAnySetter
+//    public void savedInterestsJson(String key, String value) {
+//        savedInterests.put(key, value);
+//    }
+
+//    public Map<String, String> getSavedInterests() {
+//        return savedInterests;
+//    }
+//
+//    public void setSavedInterests(Map<String, String> savedInterests) {
+//        this.savedInterests = savedInterests;
+//    }
 
 //    static HashMap<String, List> searchInterests = new HashMap<>();
 
